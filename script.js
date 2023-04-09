@@ -3,11 +3,10 @@ let inputtedTopics = ["บทวิเคราะห์ราคา", "ข่�
 function addStyle(topicBlock) {
     const textWidth = topicBlock.textContent.length * 7 + 35;
     topicBlock.style.width = textWidth + "px";
-    topicBlock.style.height = "27px";
+    topicBlock.style.height = "39px";
     topicBlock.style.background = "white";
     topicBlock.style.textAlign = "center";
-    topicBlock.style.paddingTop = "7px";
-    topicBlock.style.paddingBottom = "6px";
+    topicBlock.style.paddingTop = "2px";
     topicBlock.style.borderRadius = "0.45em";
 }
 
@@ -16,13 +15,27 @@ function addBox(topicBlock) {
     selectedTopic.appendChild(topicBlock);
 }
 
-function process() {
+function pollProcess() {
     for (i = 0 ; i < inputtedTopics.length ; i++) {
-        let topicBlock = document.createElement("div");
+        let topicBlock = document.createElement("button");
         topicBlock.textContent = inputtedTopics[i];
         addStyle(topicBlock);
         addBox(topicBlock);
     }
 }
+pollProcess();
+    
+function removeBox() {
 
-process();
+}
+
+/*
+
+const pollBody = document.getElementById('poll-body');
+
+pollBody.addEventListener('click', function(event) {
+  const box = event.target;
+  box.style.display = 'none';
+});
+
+*/
