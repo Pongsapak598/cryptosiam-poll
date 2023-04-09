@@ -1,0 +1,7 @@
+get text from admin
+
+add style to text (eg. BGcolor, height, width)
+
+target the element in HTML
+
+add text with style to that element in HTML
