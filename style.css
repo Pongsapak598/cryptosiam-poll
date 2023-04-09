@@ -11,7 +11,12 @@ button {
     font-weight: inherit;
     line-height: inherit;
     padding: 0;
-  }
+}
+
+#poll-body button:hover {
+    border: 3.5px solid #00c30031;
+    transition: border 0.05s ease-in-out;
+}
 
 .poll {
     background-color: #F3F4F5;
@@ -21,7 +26,8 @@ button {
     padding: 19px;
 }
 
-.poll-head {
+#poll-head {
+    transition: opacity 1s;
 }
 
 .poll-head p {
@@ -32,6 +38,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     gap: 13px;
+    transition: opacity 1s;
 }
 
 @font-face {
