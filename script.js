@@ -80,6 +80,7 @@ function boxClicked(value) {
             thanksText.style.opacity = "1";
             }
         }
+        
         pollBox.style.height = pollHeight + "px";
     }
     removeBox();
