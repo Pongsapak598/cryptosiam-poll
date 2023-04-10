@@ -39,6 +39,8 @@ function pollProcess() {
 }
 pollProcess();
 
+let clickCount = 0; //to avoid user from clicking many times, if !== 1 thanksText will not show
+
 function boxClicked(value) {
 
     const pollBox = document.querySelector(".poll");
@@ -61,6 +63,7 @@ function boxClicked(value) {
         }, {once: true});
 
     function showThanksText() {
+        clickCount++
         const poll = document.querySelector(".poll");
         poll.style.display = "flex";
         poll.style.justifyContent = "center";
@@ -70,10 +73,13 @@ function boxClicked(value) {
         thanksText.style.fontSize = "1.5em";
         thanksText.style.transition = "opacity 1.5s";
         thanksText.style.opacity = "0";
-        poll.appendChild(thanksText);
-        void thanksText.offsetWidth;
-        thanksText.style.opacity = "1";
-      }
+
+        if (clickCount === 1) {
+            poll.appendChild(thanksText);
+            void thanksText.offsetWidth;
+            thanksText.style.opacity = "1";
+            }
+        }
         pollBox.style.height = pollHeight + "px";
     }
     removeBox();
